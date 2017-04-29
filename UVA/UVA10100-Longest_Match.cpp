@@ -57,7 +57,7 @@ int main()
             {
                 dp[i][j]=max(dp[i][j-1],dp[i-1][j]);    //计算s1中前i个单词和s2中前j个单词最多的单词数
                 if(t1.word[i]==t2.word[j])
-                    dp[i][j]=dp[i-1][j-1]+1;
+					dp[i][j]=max(dp[i][j],dp[i-1][j-1]+1);
             }
         }
         printf("Length of longest match: %d\n",dp[t1.num][t2.num]);

@@ -1,35 +1,22 @@
-//UVA100
-#include<stdio.h>
-int main()
-{
-    int p,i,j,k,n,max,c;
-    while(scanf("%d%d",&i,&j)!=EOF)
-    {
-        printf("%d %d ",i,j);
-        max=-1;
-        c=1;
-        if(i>j)
-        {
-            p=i;
-            i=j;
-            j=p;
-        }
-        for(k=i;k<=j;k++)
-        {
-            n=k;
-            while(n>1)
-            {
-                if(n%2==1)
-                    n=n*3+1;
-                else
-                    n=n/2;
+#include <iostream>
+using namespace std;
+int main(){
+    int a,b,t;
+    while(cin>>a>>b){
+        cout<<a<<" "<<b<<" ";
+        if(a>b) swap(a,b);
+        int c,maxn=-1;
+        for(int i=a;i<=b;i++){
+            t=i;
+            c=1;
+            while(t>1){
+                if(t&1) t=3*t+1;
+                else t/=2;
                 c++;
             }
-            if(c>max)
-                max=c;
-            c=1;
+            maxn=max(maxn,c);
         }
-    printf("%d\n",max);
+        cout<<maxn<<endl;
     }
     return 0;
 }

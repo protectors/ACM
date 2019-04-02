@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 int qmod(int a,int b){
-	int ans=0;
+	int ans=1;
 	while(b){
 		if(b&1) ans=(ans*a)%1000;
 		a=(a*a)%1000;
@@ -11,7 +11,7 @@ int qmod(int a,int b){
 }
 int main(){
 	int a,b;
-	while(cin>>a>>b &&(a||b)){
+	while(cin>>a>>b && (a||b)){
 		cout<<qmod(a,b)<<endl;
 	}
 	return 0;

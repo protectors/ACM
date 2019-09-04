@@ -33,3 +33,46 @@ int main(){
     }
     return 0;
 }
+
+
+/*
+#include <cstdio>
+#include <iostream>
+#include <cstring>
+#include <string>
+#include <cctype>
+using namespace std ;
+
+int digit[20];
+long long dp[20][2];
+
+long long dfs(int len,bool if6,bool limit){
+    if(len==0) return 1;
+    if(!limit && dp[len][if6]) return dp[len][if6];
+    long long cnt=0,up_bound=(limit?digit[len]:9);
+    for(int i=0;i<=up_bound;i++){
+        if(if6 && i==2) continue;
+        if(i==4) continue;
+        cnt+=dfs(len-1,i==6,limit&&i==up_bound);
+    }
+    if(!limit) dp[len][if6]=cnt;
+    return cnt;
+}
+
+long long solve(long long n){
+    int k=0;
+    while(n){
+        digit[++k]=n%10;
+        n/=10;
+    }
+    return dfs(k,false,true);
+}
+
+int main(){
+    long long n,m;
+    while(cin>>n>>m&&n+m){
+        cout<<solve(m)-solve(n-1)<<endl;
+    }
+    return 0;
+}
+*/

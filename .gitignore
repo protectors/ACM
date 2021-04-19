@@ -3,3 +3,5 @@
 build
 .idea/
 LeetCode/leetcode/
+cmake-build-debug/
+CMakeLists.txt

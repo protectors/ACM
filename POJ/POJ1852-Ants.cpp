@@ -15,7 +15,7 @@ int main(){
         for(i=1;i<=n;i++) scanf("%d",&a[i]);
         for(i=1;i<=n;i++)
             mint=max(mint,min(a[i],len-a[i]));
-          for(i=1;i<=n;i++)
+        for(i=1;i<=n;i++)
             maxt=max(maxt,max(a[i],len-a[i]));
         printf("%d %d\n",mint,maxt);
     }
